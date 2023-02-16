@@ -25,14 +25,14 @@ int partition_soln(int *arr,int n)
     int key = (float)sum/2;
     int flag = 0;
     printf("\nkey:%d",key);
-    while(flag != 1 && n>0)
-    {
-        for(int i=n;i>0;i--)
-        {
-            ()
+//     while(flag != 1 && n>0)
+//     {
+//         for(int i=n;i>0;i--)
+//         {
+//             ()
 
-        }
-    }
+//         }
+//     }
     return flag;
 }
 // 1 5 5 11
