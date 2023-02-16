@@ -1,36 +1,43 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 
-void input(int *arr,int n)
+int string_matching(char *arr,char *str,int n,int m)
 {
-    printf("\nenter the elements:");
-    for(int i=0;i<n;i++)
+    int i;
+    for(i=0;i<=n-m;i++)
     {
-        scanf("%d",&arr[i]);
+        int j = 0;
+        while(j<m && arr[i+j]==str[j])
+        {
+            j++;
+            
+        }
+        if(j==m)
+                return i;
+        
     }
-
-    for(int i=0;i<n;i++)
-    {
-        printf("%d",arr[i]);
-    }
-
-}
-
-void string_matching(int *arr,int *str,int n,int m)
-{
-    for(int i=0;i<m-n;i++)
-    {
-
-    }
+    return -1;
 }
 
 int main()
 {
-    int n;
-    int *arr = (int*)malloc(n*sizeof(int));
-    int *str = (int*)malloc(n*sizeof(int));
-    input(arr,n);
-    input(str,m);
+    int n,m;
+
+    char *arr = (char*)malloc(20*sizeof(char));
+    char *str = (char*)malloc(20*sizeof(char));
+
+
+    printf("enter the text:");
+    scanf("%s",arr);
+    fflush(stdin);
+    printf("\nenter the pattern:");
+    scanf("%s",str);
+
+    n = strlen(arr);
+    m = strlen(str);
+
+    printf("\nans:%d",string_matching(arr,str,n,m));
     
 }
